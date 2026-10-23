@@ -1,0 +1,28 @@
+[project]
+name = "vheist"
+version = "0.1.0"
+description = "High-speed virtual host discovery and probing TUI"
+authors = [
+    { name = "Mike Kane" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "textual>=8.2.8",
+]
+
+[project.scripts]
+vheist = "vheist.__main__:main"
+
+[build-system]
+requires = ["uv_build>=0.11.15,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
