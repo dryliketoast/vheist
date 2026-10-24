@@ -1,0 +1,29 @@
+{
+  "domains": [
+    "www.example.com",
+    "api.example.com",
+    "shop.example.com",
+    "admin.example.com",
+    "mail.example.com",
+    "grafana.example.com",
+    "jenkins.example.com",
+    "git.example.com",
+    "staging.example.com",
+    "vpn.example.com",
+    "old.example.com",
+    "dev.example.com"
+  ],
+  "ips": [
+    "127.0.0.1",
+    "127.0.0.2"
+  ],
+  "http": true,
+  "https": false,
+  "port_http": 18080,
+  "port_https": 443,
+  "timeout": 5.0,
+  "concurrency": 4,
+  "hide_failures": false,
+  "hide_baseline": false,
+  "user_agent": "vheist/0.1.0"
+}

@@ -2,6 +2,8 @@
 
 **High-speed virtual host discovery and probing TUI.** Probe subdomains, hostnames, and wordlists against target IP addresses using `curl --resolve`, extracting HTTP response headers, server banners, and page titles in real time.
 
+![vheist demo](docs/demo.gif)
+
 ---
 
 ## Overview
