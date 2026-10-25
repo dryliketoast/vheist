@@ -53,7 +53,6 @@ Probe every subdomain against every endpoint IP using `curl` with `--resolve`, v
 | `p` | Pause / resume active scan |
 | `c` | Clear results table |
 | `f` | Toggle hiding failed/timed-out probes |
-| `b` | Toggle hiding baseline / duplicate wildcard responses |
 | `i` | Bulk import targets (paste wordlists or CIDRs) |
 | `e` | Export results (JSON, CSV, Markdown, Text) |
 | `Enter` | Inspect highlighted result row |

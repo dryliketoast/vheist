@@ -112,7 +112,6 @@ class VhostHeist(App):
         Binding("p", "pause_resume", "Pause"),
         Binding("c", "clear", "Clear"),
         Binding("f", "toggle_failures", "Failures"),
-        Binding("b", "toggle_baseline", "Baseline"),
         Binding("i", "import_targets", "Import"),
         Binding("e", "export_results", "Export"),
         Binding("delete", "delete_target", "Delete"),
@@ -155,7 +154,6 @@ class VhostHeist(App):
                 with Horizontal(id="filter-bar"):
                     yield Input(placeholder="Search / filter (e.g. 200, admin, nginx)...", id="input-filter")
                     yield Checkbox("hide failures", self.cfg.hide_failures, id="hide_failures")
-                    yield Checkbox("hide baseline", self.cfg.hide_baseline, id="hide_baseline")
                 yield DataTable(id="results", cursor_type="row", zebra_stripes=True)
         with Horizontal(id="settings-bar"):
             yield Label("Timeout")
@@ -218,7 +216,7 @@ class VhostHeist(App):
         self.save_config()
 
     def on_checkbox_changed(self, event: Checkbox.Changed) -> None:
-        if event.checkbox.id in ("hide_failures", "hide_baseline"):
+        if event.checkbox.id == "hide_failures":
             setattr(self.cfg, event.checkbox.id, event.value)
             self.save_config()
             self._rebuild_table()
@@ -283,10 +281,6 @@ class VhostHeist(App):
 
     def action_toggle_failures(self) -> None:
         cb = self.query_one("#hide_failures", Checkbox)
-        cb.value = not cb.value
-
-    def action_toggle_baseline(self) -> None:
-        cb = self.query_one("#hide_baseline", Checkbox)
         cb.value = not cb.value
 
     def action_import_targets(self) -> None:
@@ -358,8 +352,6 @@ class VhostHeist(App):
 
     def _matches_filter(self, res: Result) -> bool:
         if self.cfg.hide_failures and not res.ok:
-            return False
-        if self.cfg.hide_baseline and res.is_baseline:
             return False
         if not self.filter_query:
             return True

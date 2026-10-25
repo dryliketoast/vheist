@@ -16,7 +16,7 @@ Sleep 3s
 Type "r" Sleep 5s
 Tab@300ms 6
 Type "admin" Sleep 3s
-Tab@300ms 3 Sleep 1s
+Tab@300ms 2 Sleep 1s
 Down Sleep 1s
 Enter Sleep 5s
 Escape Sleep 1s

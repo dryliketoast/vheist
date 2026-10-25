@@ -50,7 +50,6 @@ This guarantees:
 - **Live Search & Filtering**:
   - Instant text filter bar matching domains, IPs, status codes, page titles, servers, or errors.
   - One-key toggle for hiding failed probes (`f`).
-  - Baseline / wildcard filter toggle (`b`).
 
 ### 🎯 CIDR & Target Expansion
 - **CIDR Subnet Expansion**: Input network ranges like `192.168.1.0/29` or `192.168.2.0/30` directly—`vheist` automatically expands them into individual host IP addresses.
@@ -153,7 +152,6 @@ uv run vheist --config /path/to/custom-config.json
 | `p` | **Pause / Resume** | Temporarily pause active probe workers and resume |
 | `c` | **Clear** | Clear results table and reset scan statistics |
 | `f` | **Toggle Failures** | Hide or show failed/timed-out probes |
-| `b` | **Toggle Baseline** | Hide or show baseline wildcard matches |
 | `i` | **Import** | Open Bulk Import modal (paste wordlists or load file) |
 | `e` | **Export** | Open Export modal (JSON, CSV, Markdown, Text) |
 | `Enter` | **Inspect** | View detailed inspector dialog for selected row |
@@ -185,7 +183,6 @@ Settings and targets are stored in standard JSON format:
   "timeout": 5.0,
   "concurrency": 8,
   "hide_failures": false,
-  "hide_baseline": false,
   "user_agent": "vheist/0.1.0"
 }
 ```

@@ -33,7 +33,6 @@ class Result:
     headers: dict[str, str] = field(default_factory=dict)
     body_snippet: str = ""
     error: str = ""
-    is_baseline: bool = False
 
     @property
     def ok(self) -> bool:

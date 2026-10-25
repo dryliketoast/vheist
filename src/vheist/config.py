@@ -78,7 +78,6 @@ class Config:
     timeout: float = 5.0
     concurrency: int = 8
     hide_failures: bool = False
-    hide_baseline: bool = False
     user_agent: str = "vheist/0.1.0"
     path: Path = field(default_factory=default_path, repr=False, compare=False)
 

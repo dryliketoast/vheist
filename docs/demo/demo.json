@@ -24,6 +24,6 @@
   "timeout": 5.0,
   "concurrency": 4,
   "hide_failures": false,
-  "hide_baseline": false,
+  
   "user_agent": "vheist/0.1.0"
 }
